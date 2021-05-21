@@ -1,4 +1,5 @@
 const screen = document.querySelector(".screen");
+const clear = document.querySelector("#clear");
 const size = 15;
 
 window.addEventListener("load", createGrid(size));
@@ -11,6 +12,10 @@ for (let i = 0; i < grid.length; i++) {
     });
 }
 
+clear.addEventListener("click", function() {
+    clearGrid();
+});
+
 function createGrid(num) {
     screen.style.gridTemplateRows = "repeat(" + num + ", auto)";
     screen.style.gridTemplateColumns = "repeat(" + num + ", auto)";
@@ -18,6 +23,12 @@ function createGrid(num) {
     for (let i = 0; i < num ** 2; i++) {
         let div = document.createElement("div");
         screen.appendChild(div).setAttribute("style", "background-color: #fff");
+    }
+}
+
+function clearGrid() {
+    for (let i = 0; i < grid.length; i++) {
+        grid[i].setAttribute("style", "background-color: #fff");
     }
 }
 
