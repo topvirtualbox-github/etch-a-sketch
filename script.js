@@ -1,19 +1,30 @@
 const screen = document.querySelector(".screen");
 const clear = document.querySelector("#clear");
+const black = document.querySelector("#black");
+const rgb = document.querySelector("#rgb");
 const size = 15;
-
 window.addEventListener("load", createGrid(size));
-
+let mode = "black";
 let grid = document.querySelectorAll(".screen>div");
 
 for (let i = 0; i < grid.length; i++) {
     grid[i].addEventListener("mouseover", function() {
-        grid[i].setAttribute("style", "background-color: #000");
+        if (mode === "black") {
+            grid[i].setAttribute("style", "background-color: #000");
+        } else {
+            grid[i].setAttribute("style", "background-color: #" + Math.floor(Math.random()*16777216).toString(16));
+        }
     });
 }
 
 clear.addEventListener("click", function() {
     clearGrid();
+});
+black.addEventListener("click", function() {
+    mode = "black";
+});
+rgb.addEventListener("click", function() {
+    mode = "rgb";
 });
 
 function createGrid(num) {
@@ -31,6 +42,4 @@ function clearGrid() {
         grid[i].setAttribute("style", "background-color: #fff");
     }
 }
-
-
 
