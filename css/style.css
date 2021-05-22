@@ -1,6 +1,5 @@
 body {
     height: 100vh;
-    margin: 0;
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -63,6 +62,7 @@ button {
     height: 35px;
     background-color: #eee;
     color: #000;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #000;
     box-sizing: border-box;
