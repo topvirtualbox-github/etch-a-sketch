@@ -1,6 +1,7 @@
 const black = document.querySelector("#black");
 const rgb = document.querySelector("#rgb");
 const clear = document.querySelector("#clear");
+const size = document.querySelector("#size");
 let color = "black";
 
 window.addEventListener("load", createGrid(16));
@@ -14,6 +15,9 @@ rgb.addEventListener("click", function() {
 });
 clear.addEventListener("click", function() {
     clearGrid();
+});
+size.addEventListener("click", function() {
+    sizeGrid();
 });
 
 function createGrid(num) {
@@ -44,5 +48,24 @@ function paintGrid() {
                 grid[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
             }
         });
+    }
+}
+
+function removeGrid() {
+    let grid = document.querySelectorAll(".screen>div");
+    for (let i = 0; i < grid.length; i++) {
+        grid[i].remove();
+    }
+}
+
+function sizeGrid() {
+    let answer = prompt("Size:");
+    while (answer !== null && (isNaN(answer) || answer < 1 || answer > 64 || answer % 1 !== 0)) {
+        answer = prompt("Insert a number between 1 and 64:");
+    }
+    if (answer !== null) {
+        removeGrid();
+        createGrid(answer);
+        paintGrid();
     }
 }
