@@ -64,6 +64,7 @@ function sizeGrid() {
         answer = prompt("Insert a number between 1 and 64:");
     }
     if (answer !== null) {
+        answer = Math.floor(answer);
         removeGrid();
         createGrid(answer);
         paintGrid();
