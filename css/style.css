@@ -1,13 +1,17 @@
 :root {
-    --white: #fff;
-    --light: #eee;
-    --dark: #111;
     --black: #000;
+    --white: #fff;
+    --red: #db4437;
+    --green: #0f9d58;
+    --blue: #4285f4;
+    --yellow: #f4b400;
+    --color: #eee;
+    --background: #111;
 }
 
 body {
     height: 100vh;
-    background-color: var(--dark);
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +28,7 @@ header {
 }
 
 #title {
-    color: var(--light);
+    color: var(--color);
     font-size: 45px;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;
@@ -34,7 +38,7 @@ main {
     width: 550px;
     height: 650px;
     min-height: 650px;
-    background-color: var(--light);
+    background-color: var(--color);
     border: 1px solid var(--black);
     box-sizing: border-box;
     display: flex;
@@ -44,17 +48,17 @@ main {
 }
 
 .top {
-    width: 500px;
-    height: 50px;
+    width: 550px;
+    height: 75px;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .top button {
-    width: 100px;
+    width: 80px;
     height: 35px;
-    background-color: var(--light);
+    background-color: var(--color);
     color: var(--black);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -63,8 +67,8 @@ main {
 }
 
 .top button:active {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--background);
+    color: var(--color);
 }
 
 .screen {
@@ -77,17 +81,17 @@ main {
 }
 
 .bottom {
-    width: 500px;
-    height: 50px;
+    width: 550px;
+    height: 75px;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .bottom button {
     width: 100px;
     height: 35px;
-    background-color: var(--light);
+    background-color: var(--color);
     color: var(--black);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -96,8 +100,8 @@ main {
 }
 
 .bottom button:active {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--background);
+    color: var(--color);
 }
 
 footer {
@@ -110,7 +114,7 @@ footer {
 }
 
 #author {
-    color: var(--light);
+    color: var(--color);
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;

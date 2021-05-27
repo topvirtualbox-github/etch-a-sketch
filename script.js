@@ -1,5 +1,9 @@
 const black = document.querySelector("#black");
 const white = document.querySelector("#white");
+const red = document.querySelector("#red");
+const green = document.querySelector("#green");
+const blue = document.querySelector("#blue");
+const yellow = document.querySelector("#yellow");
 const rgb = document.querySelector("#rgb");
 const clear = document.querySelector("#clear");
 const size = document.querySelector("#size");
@@ -13,6 +17,18 @@ black.addEventListener("click", function() {
 });
 white.addEventListener("click", function() {
     color = "white";
+});
+red.addEventListener("click", function() {
+    color = "red";
+});
+green.addEventListener("click", function() {
+    color = "green";
+});
+blue.addEventListener("click", function() {
+    color = "blue";
+});
+yellow.addEventListener("click", function() {
+    color = "yellow";
 });
 rgb.addEventListener("click", function() {
     color = "rgb";
@@ -50,6 +66,14 @@ function paintGrid() {
                 grid[i].style.backgroundColor = "var(--black)";
             } else if (color === "white") {
                 grid[i].style.backgroundColor = "var(--white)";
+            } else if (color === "red") {
+                grid[i].style.backgroundColor = "var(--red)";
+            } else if (color === "green") {
+                grid[i].style.backgroundColor = "var(--green)";
+            } else if (color === "blue") {
+                grid[i].style.backgroundColor = "var(--blue)";
+            } else if (color === "yellow") {
+                grid[i].style.backgroundColor = "var(--yellow)";
             } else {
                 grid[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
             }
