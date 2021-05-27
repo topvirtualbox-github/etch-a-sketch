@@ -1,6 +1,13 @@
+:root {
+    --white: #fff;
+    --light: #eee;
+    --dark: #111;
+    --black: #000;
+}
+
 body {
     height: 100vh;
-    background-color: #333;
+    background-color: var(--dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,12 +23,19 @@ header {
     align-items: center;
 }
 
+#title {
+    color: var(--light);
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
+}
+
 main {
     width: 550px;
     height: 650px;
     min-height: 650px;
-    background-color: #eee;
-    border: 1px solid #000;
+    background-color: var(--light);
+    border: 1px solid var(--black);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -32,27 +46,32 @@ main {
 .top {
     width: 500px;
     height: 50px;
-    background-color: #bbb;
-    border: 1px solid #000;
-    border-bottom: none;
-    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 
-#title {
-    margin-top: 35px;
-    font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
-    user-select: none;
+.top button {
+    width: 100px;
+    height: 35px;
+    background-color: var(--light);
+    color: var(--black);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid var(--black);
+    box-sizing: border-box;
+}
+
+.top button:active {
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .screen {
     width: 500px;
     height: 500px;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: var(--black);
+    border: 1px solid var(--black);
     box-sizing: border-box;
     display: grid;
 }
@@ -60,28 +79,25 @@ main {
 .bottom {
     width: 500px;
     height: 50px;
-    background-color: #bbb;
-    border: 1px solid #000;
-    border-top: none;
-    box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .bottom button {
     width: 100px;
     height: 35px;
-    background-color: #eee;
-    color: #000;
+    background-color: var(--light);
+    color: var(--black);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid #000;
+    border: 1px solid var(--black);
     box-sizing: border-box;
 }
 
 .bottom button:active {
-    background-color: #888;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 footer {
@@ -91,4 +107,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#author {
+    color: var(--light);
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
 }
