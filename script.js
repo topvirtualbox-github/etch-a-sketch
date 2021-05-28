@@ -47,6 +47,7 @@ function createGrid(num) {
     screen.style.gridGap = "1px 1px";
     for (let i = 0; i < num ** 2; i++) {
         let div = document.createElement("div");
+        div.style.userSelect = "none";
         screen.appendChild(div).style.backgroundColor = "var(--white)";
     } 
 }
@@ -61,21 +62,54 @@ function clearGrid() {
 function paintGrid() {
     let grid = document.querySelectorAll(".screen>div");
     for (let i = 0; i < grid.length; i++) {
-        grid[i].addEventListener("mouseover", function() {
-            if (color === "black") {
-                grid[i].style.backgroundColor = "var(--black)";
-            } else if (color === "white") {
-                grid[i].style.backgroundColor = "var(--white)";
-            } else if (color === "red") {
-                grid[i].style.backgroundColor = "var(--red)";
-            } else if (color === "green") {
-                grid[i].style.backgroundColor = "var(--green)";
-            } else if (color === "blue") {
-                grid[i].style.backgroundColor = "var(--blue)";
-            } else if (color === "yellow") {
-                grid[i].style.backgroundColor = "var(--yellow)";
-            } else {
-                grid[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
+        grid[i].addEventListener("mousedown", function() {
+            switch (color) {
+                case "black":
+                    grid[i].style.backgroundColor = "var(--black)";
+                    break;
+                case "white":
+                    grid[i].style.backgroundColor = "var(--white)";
+                    break;
+                case "red":
+                    grid[i].style.backgroundColor = "var(--red)";
+                    break;
+                case "green":
+                    grid[i].style.backgroundColor = "var(--green)";
+                    break;
+                case "blue":
+                    grid[i].style.backgroundColor = "var(--blue)";
+                    break;
+                case "yellow":
+                    grid[i].style.backgroundColor = "var(--yellow)";
+                    break;
+                case "rgb":
+                    grid[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
+            }
+        });
+        grid[i].addEventListener("mouseover", function(e) {
+            if (e.buttons === 1) {
+                switch (color) {
+                    case "black":
+                        grid[i].style.backgroundColor = "var(--black)";
+                        break;
+                    case "white":
+                        grid[i].style.backgroundColor = "var(--white)";
+                        break;
+                    case "red":
+                        grid[i].style.backgroundColor = "var(--red)";
+                        break;
+                    case "green":
+                        grid[i].style.backgroundColor = "var(--green)";
+                        break;
+                    case "blue":
+                        grid[i].style.backgroundColor = "var(--blue)";
+                        break;
+                    case "yellow":
+                        grid[i].style.backgroundColor = "var(--yellow)";
+                        break;
+                    case "rgb":
+                        grid[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
+                }
             }
         });
     }
