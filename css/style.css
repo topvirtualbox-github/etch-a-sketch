@@ -7,6 +7,7 @@
     --yellow: #f4b400;
     --color: #eee;
     --background: #111;
+    --border: #000;
 }
 
 body {
@@ -39,7 +40,7 @@ main {
     height: 650px;
     min-height: 650px;
     background-color: var(--color);
-    border: 1px solid var(--black);
+    border: 1px solid var(--border);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -56,13 +57,13 @@ main {
 }
 
 .top button {
-    width: 80px;
+    width: 105px;
     height: 35px;
     background-color: var(--color);
-    color: var(--black);
+    color: var(--border);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid var(--black);
+    border: 1px solid var(--border);
     box-sizing: border-box;
 }
 
@@ -75,7 +76,7 @@ main {
     width: 500px;
     height: 500px;
     background-color: var(--black);
-    border: 1px solid var(--black);
+    border: 1px solid var(--border);
     box-sizing: border-box;
     display: grid;
 }
@@ -89,13 +90,13 @@ main {
 }
 
 .bottom button {
-    width: 100px;
+    width: 70px;
     height: 35px;
     background-color: var(--color);
-    color: var(--black);
+    color: var(--border);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid var(--black);
+    border: 1px solid var(--border);
     box-sizing: border-box;
 }
 

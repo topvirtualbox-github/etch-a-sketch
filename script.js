@@ -1,3 +1,6 @@
+const mode = document.querySelector("#mode");
+const clear = document.querySelector("#clear");
+const size = document.querySelector("#size");
 const black = document.querySelector("#black");
 const white = document.querySelector("#white");
 const red = document.querySelector("#red");
@@ -5,13 +8,32 @@ const green = document.querySelector("#green");
 const blue = document.querySelector("#blue");
 const yellow = document.querySelector("#yellow");
 const rgb = document.querySelector("#rgb");
-const clear = document.querySelector("#clear");
-const size = document.querySelector("#size");
+let theme = "dark";
 let color = "black";
 
 window.addEventListener("load", createGrid(16));
 window.addEventListener("load", paintGrid());
 
+mode.addEventListener("click", function() {
+    let root = document.querySelector(":root");
+    if (theme === "dark") {
+        root.style.setProperty("--color", "#111");
+        root.style.setProperty("--background", "#eee");
+        root.style.setProperty("--border", "#fff");
+        theme = "light";
+    } else if (theme === "light") {
+        root.style.setProperty("--color", "#eee");
+        root.style.setProperty("--background", "#111");
+        root.style.setProperty("--border", "#000");
+        theme = "dark";
+    }
+});
+clear.addEventListener("click", function() {
+    clearGrid();
+});
+size.addEventListener("click", function() {
+    sizeGrid();
+});
 black.addEventListener("click", function() {
     color = "black";
 });
@@ -32,12 +54,6 @@ yellow.addEventListener("click", function() {
 });
 rgb.addEventListener("click", function() {
     color = "rgb";
-});
-clear.addEventListener("click", function() {
-    clearGrid();
-});
-size.addEventListener("click", function() {
-    sizeGrid();
 });
 
 function createGrid(num) {
