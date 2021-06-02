@@ -57,7 +57,7 @@ main {
 }
 
 .top button {
-    width: 105px;
+    width: 100px;
     height: 35px;
     background-color: var(--color);
     color: var(--border);
@@ -90,7 +90,7 @@ main {
 }
 
 .bottom button {
-    width: 70px;
+    width: 50px;
     height: 35px;
     background-color: var(--color);
     color: var(--border);
@@ -104,6 +104,13 @@ main {
     background-color: var(--background);
     color: var(--color);
 }
+
+#black {background-color: var(--black);}
+#white {background-color: var(--white);}
+#red {background-color: var(--red);}
+#green {background-color: var(--green);}
+#blue {background-color: var(--blue);}
+#yellow {background-color: var(--yellow);}
 
 footer {
     width: 550px;
