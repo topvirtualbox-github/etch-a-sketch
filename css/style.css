@@ -1,11 +1,13 @@
 :root {
     --black: #000;
     --white: #fff;
-    --red: #db4437;
-    --green: #0f9d58;
-    --blue: #4285f4;
-    --yellow: #f4b400;
-    --color: #eee;
+    --red: #f85245;
+    --orange: #feb718;
+    --yellow: #efe803;
+    --green: #12ca22;
+    --blue: #068dda;
+    --purple: #752ed4;
+    --main: #eee;
     --background: #111;
     --border: #000;
 }
@@ -29,7 +31,7 @@ header {
 }
 
 #title {
-    color: var(--color);
+    color: var(--main);
     font-size: 45px;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;
@@ -39,7 +41,7 @@ main {
     width: 550px;
     height: 650px;
     min-height: 650px;
-    background-color: var(--color);
+    background-color: var(--main);
     border: 1px solid var(--border);
     box-sizing: border-box;
     display: flex;
@@ -57,9 +59,9 @@ main {
 }
 
 .top button {
-    width: 100px;
-    height: 35px;
-    background-color: var(--color);
+    width: 90px;
+    height: 40px;
+    background-color: var(--main);
     color: var(--border);
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -69,7 +71,7 @@ main {
 
 .top button:active {
     background-color: var(--background);
-    color: var(--color);
+    color: var(--main);
 }
 
 .screen {
@@ -91,26 +93,20 @@ main {
 
 .bottom button {
     width: 50px;
-    height: 35px;
-    background-color: var(--color);
-    color: var(--border);
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
     border: 1px solid var(--border);
     box-sizing: border-box;
-}
-
-.bottom button:active {
-    background-color: var(--background);
-    color: var(--color);
+    cursor: pointer;
 }
 
 #black {background-color: var(--black);}
 #white {background-color: var(--white);}
 #red {background-color: var(--red);}
+#orange {background-color: var(--orange);}
+#yellow {background-color: var(--yellow);}
 #green {background-color: var(--green);}
 #blue {background-color: var(--blue);}
-#yellow {background-color: var(--yellow);}
+#purple {background-color: var(--purple);}
 
 footer {
     width: 550px;
@@ -122,7 +118,7 @@ footer {
 }
 
 #author {
-    color: var(--color);
+    color: var(--main);
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;

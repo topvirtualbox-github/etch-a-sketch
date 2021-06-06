@@ -2,13 +2,15 @@ const grid = document.querySelector("#grid");
 const clear = document.querySelector("#clear");
 const size = document.querySelector("#size");
 const mode = document.querySelector("#mode");
+
 const black = document.querySelector("#black");
 const white = document.querySelector("#white");
 const red = document.querySelector("#red");
+const orange = document.querySelector("#orange");
+const yellow = document.querySelector("#yellow");
 const green = document.querySelector("#green");
 const blue = document.querySelector("#blue");
-const yellow = document.querySelector("#yellow");
-const rgb = document.querySelector("#rgb");
+const purple = document.querySelector("#purple");
 
 let isColor = "black";
 let isGrid = "on";
@@ -28,26 +30,30 @@ size.addEventListener("click", function() {
 mode.addEventListener("click", function() {
     changeMode();
 });
-black.addEventListener("click", function() {
+
+black.addEventListener("mousedown", function() {
     isColor = "black";
 });
-white.addEventListener("click", function() {
+white.addEventListener("mousedown", function() {
     isColor = "white";
 });
-red.addEventListener("click", function() {
+red.addEventListener("mousedown", function() {
     isColor = "red";
 });
-green.addEventListener("click", function() {
-    isColor = "green";
+orange.addEventListener("mousedown", function() {
+    isColor = "orange";
 });
-blue.addEventListener("click", function() {
-    isColor = "blue";
-});
-yellow.addEventListener("click", function() {
+yellow.addEventListener("mousedown", function() {
     isColor = "yellow";
 });
-rgb.addEventListener("click", function() {
-    isColor = "rgb";
+green.addEventListener("mousedown", function() {
+    isColor = "green";
+});
+blue.addEventListener("mousedown", function() {
+    isColor = "blue";
+});
+purple.addEventListener("mousedown", function() {
+    isColor = "purple";
 });
 
 function createScreen(num) {
@@ -79,52 +85,42 @@ function paintScreen() {
     let divs = document.querySelectorAll(".screen>div");
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener("mousedown", function() {
-            switch (isColor) {
-                case "black":
-                    divs[i].style.backgroundColor = "var(--black)";
-                    break;
-                case "white":
-                    divs[i].style.backgroundColor = "var(--white)";
-                    break;
-                case "red":
-                    divs[i].style.backgroundColor = "var(--red)";
-                    break;
-                case "green":
-                    divs[i].style.backgroundColor = "var(--green)";
-                    break;
-                case "blue":
-                    divs[i].style.backgroundColor = "var(--blue)";
-                    break;
-                case "yellow":
-                    divs[i].style.backgroundColor = "var(--yellow)";
-                    break;
-                case "rgb":
-                    divs[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
+            if (isColor === "black") {
+                divs[i].style.backgroundColor = "var(--black)";
+            } else if (isColor === "white") {
+                divs[i].style.backgroundColor = "var(--white)";
+            } else if (isColor === "red") {
+                divs[i].style.backgroundColor = "var(--red)";
+            } else if (isColor === "orange") {
+                divs[i].style.backgroundColor = "var(--orange)";
+            } else if (isColor === "yellow") {
+                divs[i].style.backgroundColor = "var(--yellow)";
+            } else if (isColor === "green") {
+                divs[i].style.backgroundColor = "var(--green)";
+            } else if (isColor === "blue") {
+                divs[i].style.backgroundColor = "var(--blue)";
+            } else if (isColor === "purple") {
+                divs[i].style.backgroundColor = "var(--purple)";
             }
         });
         divs[i].addEventListener("mouseover", function(e) {
             if (e.buttons === 1) {
-                switch (isColor) {
-                    case "black":
-                        divs[i].style.backgroundColor = "var(--black)";
-                        break;
-                    case "white":
-                        divs[i].style.backgroundColor = "var(--white)";
-                        break;
-                    case "red":
-                        divs[i].style.backgroundColor = "var(--red)";
-                        break;
-                    case "green":
-                        divs[i].style.backgroundColor = "var(--green)";
-                        break;
-                    case "blue":
-                        divs[i].style.backgroundColor = "var(--blue)";
-                        break;
-                    case "yellow":
-                        divs[i].style.backgroundColor = "var(--yellow)";
-                        break;
-                    case "rgb":
-                        divs[i].style.backgroundColor = "#" + Math.floor(Math.random()*16777216).toString(16);
+                if (isColor === "black") {
+                    divs[i].style.backgroundColor = "var(--black)";
+                } else if (isColor === "white") {
+                    divs[i].style.backgroundColor = "var(--white)";
+                } else if (isColor === "red") {
+                    divs[i].style.backgroundColor = "var(--red)";
+                } else if (isColor === "orange") {
+                    divs[i].style.backgroundColor = "var(--orange)";
+                } else if (isColor === "yellow") {
+                    divs[i].style.backgroundColor = "var(--yellow)";
+                } else if (isColor === "green") {
+                    divs[i].style.backgroundColor = "var(--green)";
+                } else if (isColor === "blue") {
+                    divs[i].style.backgroundColor = "var(--blue)";
+                } else if (isColor === "purple") {
+                    divs[i].style.backgroundColor = "var(--purple)";
                 }
             }
         });
@@ -163,12 +159,12 @@ function changeSize() {
 function changeMode() {
     let root = document.querySelector(":root");
     if (isMode === "dark") {
-        root.style.setProperty("--color", "#111");
+        root.style.setProperty("--main", "#111");
         root.style.setProperty("--background", "#eee");
         root.style.setProperty("--border", "#fff");
         isMode = "light";
     } else if (isMode === "light") {
-        root.style.setProperty("--color", "#eee");
+        root.style.setProperty("--main", "#eee");
         root.style.setProperty("--background", "#111");
         root.style.setProperty("--border", "#000");
         isMode = "dark";
