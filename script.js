@@ -1,4 +1,5 @@
 const color = document.querySelector("#color");
+const input = document.querySelector("#color>input");
 const grid = document.querySelector("#grid");
 const clear = document.querySelector("#clear");
 const size = document.querySelector("#size");
@@ -19,9 +20,8 @@ let isMode = "dark";
 
 window.addEventListener("load", createScreen(15));
 
-color.addEventListener("mousedown", function() {
-    let random = "#" + Math.floor(Math.random()*16777216).toString(16);
-    changeColor(random);
+input.addEventListener("input", function() {
+    changeColor(input.value);
 });
 grid.addEventListener("click", function() {
     changeGrid();
@@ -140,22 +140,31 @@ function changeColor(col) {
     isColor = col;
     if (isColor === "black") {
         color.style.backgroundColor = "var(--black)";
+        input.value = "#000000";
     } else if (isColor === "white") {
         color.style.backgroundColor = "var(--white)";
+        input.value = "#ffffff";
     } else if (isColor === "red") {
         color.style.backgroundColor = "var(--red)";
+        input.value = "#f85245";
     } else if (isColor === "orange") {
         color.style.backgroundColor = "var(--orange)";
+        input.value = "#feb718";
     } else if (isColor === "yellow") {
         color.style.backgroundColor = "var(--yellow)";
+        input.value = "#efe803";
     } else if (isColor === "green") {
         color.style.backgroundColor = "var(--green)";
+        input.value = "#12ca22";
     } else if (isColor === "blue") {
         color.style.backgroundColor = "var(--blue)";
+        input.value = "#068dda";
     } else if (isColor === "purple") {
         color.style.backgroundColor = "var(--purple)";
+        input.value = "#752ed4";
     } else {
         color.style.backgroundColor = isColor;
+        input.value = isColor;
     }
 }
 
