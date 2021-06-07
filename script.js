@@ -1,3 +1,4 @@
+const color = document.querySelector("#color");
 const grid = document.querySelector("#grid");
 const clear = document.querySelector("#clear");
 const size = document.querySelector("#size");
@@ -18,6 +19,10 @@ let isMode = "dark";
 
 window.addEventListener("load", createScreen(15));
 
+color.addEventListener("mousedown", function() {
+    let random = "#" + Math.floor(Math.random()*16777216).toString(16);
+    changeColor(random);
+});
 grid.addEventListener("click", function() {
     changeGrid();
 });
@@ -32,28 +37,28 @@ mode.addEventListener("click", function() {
 });
 
 black.addEventListener("mousedown", function() {
-    isColor = "black";
+    changeColor("black");
 });
 white.addEventListener("mousedown", function() {
-    isColor = "white";
+    changeColor("white");
 });
 red.addEventListener("mousedown", function() {
-    isColor = "red";
+    changeColor("red");
 });
 orange.addEventListener("mousedown", function() {
-    isColor = "orange";
+    changeColor("orange");
 });
 yellow.addEventListener("mousedown", function() {
-    isColor = "yellow";
+    changeColor("yellow");
 });
 green.addEventListener("mousedown", function() {
-    isColor = "green";
+    changeColor("green");
 });
 blue.addEventListener("mousedown", function() {
-    isColor = "blue";
+    changeColor("blue");
 });
 purple.addEventListener("mousedown", function() {
-    isColor = "purple";
+    changeColor("purple");
 });
 
 function createScreen(num) {
@@ -101,6 +106,8 @@ function paintScreen() {
                 divs[i].style.backgroundColor = "var(--blue)";
             } else if (isColor === "purple") {
                 divs[i].style.backgroundColor = "var(--purple)";
+            } else {
+                divs[i].style.backgroundColor = isColor;
             }
         });
         divs[i].addEventListener("mouseover", function(e) {
@@ -121,9 +128,34 @@ function paintScreen() {
                     divs[i].style.backgroundColor = "var(--blue)";
                 } else if (isColor === "purple") {
                     divs[i].style.backgroundColor = "var(--purple)";
+                } else {
+                    divs[i].style.backgroundColor = isColor;
                 }
             }
         });
+    }
+}
+
+function changeColor(col) {
+    isColor = col;
+    if (isColor === "black") {
+        color.style.backgroundColor = "var(--black)";
+    } else if (isColor === "white") {
+        color.style.backgroundColor = "var(--white)";
+    } else if (isColor === "red") {
+        color.style.backgroundColor = "var(--red)";
+    } else if (isColor === "orange") {
+        color.style.backgroundColor = "var(--orange)";
+    } else if (isColor === "yellow") {
+        color.style.backgroundColor = "var(--yellow)";
+    } else if (isColor === "green") {
+        color.style.backgroundColor = "var(--green)";
+    } else if (isColor === "blue") {
+        color.style.backgroundColor = "var(--blue)";
+    } else if (isColor === "purple") {
+        color.style.backgroundColor = "var(--purple)";
+    } else {
+        color.style.backgroundColor = isColor;
     }
 }
 

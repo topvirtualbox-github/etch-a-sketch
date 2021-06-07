@@ -74,6 +74,11 @@ main {
     color: var(--main);
 }
 
+#color {
+    background-color: var(--black);
+    cursor: pointer;
+}
+
 .screen {
     width: 500px;
     height: 500px;
