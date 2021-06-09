@@ -1,5 +1,5 @@
 const color = document.querySelector("#color");
-const input = document.querySelector("#color>input");
+const input = document.querySelector("#input");
 const grid = document.querySelector("#grid");
 const clear = document.querySelector("#clear");
 const size = document.querySelector("#size");
@@ -16,9 +16,13 @@ const purple = document.querySelector("#purple");
 
 let isColor = "black";
 let isGrid = "on";
+let isSize = 15;
 let isMode = "dark";
 
-window.addEventListener("load", createScreen(15));
+window.addEventListener("load", function() {
+    changeColor(isColor);
+    createScreen(isSize);
+});
 
 input.addEventListener("input", function() {
     changeColor(input.value);
@@ -192,8 +196,8 @@ function changeSize() {
         answer = prompt("Insert a number between 1 and 64:");
     }
     if (answer !== null) {
-        answer = Math.floor(answer);
-        createScreen(answer);
+        isSize = Math.floor(answer);
+        createScreen(isSize);
     }
 }
 

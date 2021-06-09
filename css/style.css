@@ -76,13 +76,12 @@ main {
 
 #color {
     padding: 0;
-    background-color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#color input {
+#input {
     width: inherit;
     height: inherit;
     border-radius: 0;
